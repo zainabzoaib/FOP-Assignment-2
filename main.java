@@ -32,7 +32,7 @@ public class Main
     {
         // initialise instance variables
         int lineNumbers=0;
-        HashMap<String, List<Double>> map = new HashMap<String, List<Double>>();
+        HashMap<String, List<String>> map = new HashMap<String, List<String>>();
         try{
             File studentFile=new File("student.csv");
             Scanner myScanner=new Scanner(studentFile);
@@ -45,36 +45,47 @@ public class Main
                 }
                 else if(lineNumbers>1){
                     heads = row.split(",");
-                    ArrayList<Double> stdMarks= new ArrayList<Double>();
+                    ArrayList<String> stdMarks= new ArrayList<String>();
+                    Double totalMarks = 0.0;
+                    stdMarks.add(String.valueOf(heads[2]));
                     if (3>heads.length-1 || heads[3].equals("")){
-                        stdMarks.add(0.0);
+                        stdMarks.add("0.0");
+                        totalMarks += 0.0;
                     }
                     else{
-                        stdMarks.add(Double.valueOf(heads[3]));
+                        stdMarks.add(String.valueOf(heads[3]));
+                        totalMarks += Double.valueOf(heads[3]);
                     }
-                    if (4>heads.length-1 || heads[3].equals("")){
-                        stdMarks.add(0.0);
+                    if (4>heads.length-1 || heads[4].equals("")){
+                        stdMarks.add("0.0");
+                        totalMarks += 0.0;
                     }
                     else{
-                        stdMarks.add(Double.valueOf(heads[4]));
+                        stdMarks.add(String.valueOf(heads[4]));
+                        totalMarks += Double.valueOf(heads[4]);
                     }
 
-                    if (5>heads.length-1 || heads[3].equals("")){
-                        stdMarks.add(0.0);
+                    if (5>heads.length-1 || heads[5].equals("")){
+                        stdMarks.add("0.0");
+                        totalMarks += 0.0;
                     }
                     else{
-                        stdMarks.add(Double.valueOf(heads[5]));
+                        stdMarks.add(String.valueOf(heads[5]));
+                        totalMarks += Double.valueOf(heads[5]);
                     }
 
-                    stdMarks.add(Double.valueOf( heads[2]));
+                    stdMarks.add(String.valueOf(totalMarks));
                     map.put(heads[0]+" "+ heads[1], stdMarks);
 
                 }
                 lineNumbers++;
             }
             myScanner.close();
-            System.out.println(map);
-            System.out.println(map.size());
+            //System.out.println(map);
+            //System.out.println(map.size());
+            for(String std : map.keySet()){
+                System.out.println(std + ":" + map.get(std));
+            }
         }catch(FileNotFoundException e){
             System.out.println("The file cannot be found");
             e.printStackTrace();
