@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Arrays;
 
 /**
  * Write a description of class main here.
@@ -18,8 +19,8 @@ public class Main
     private String unitName;
     private String row;
     private String [] heads;
-    private List<String> students;
-    private List<Double> stdTotalMarks;
+    private String [] students= new String[1];
+    private Double [] stdTotalMarks= new Double [1];
     private HashMap<String, List<String>> map = new HashMap<String, List<String>>();
 
     /**
@@ -88,10 +89,10 @@ public class Main
                     }
 
                     stdDetails.add(String.valueOf(totalMarks));
-                    map.put(heads[0]+" "+ heads[1], stdDetails);
-                    students.add(heads[0]+" "+ heads[1]);
-                    stdTotalMarks.add(totalMarks);
-
+                    String stdName= heads[0]+" "+ heads[1];
+                    stdTotalMarks[lineNumbers]= totalMarks;
+                    students[lineNumbers]= stdName;
+                    map.put(stdName,stdDetails);
                 }
                 lineNumbers++;
             }
@@ -103,27 +104,41 @@ public class Main
                 System.out.println(std + ":" + total.get(4));
             }
             printMarksWithThreshold();
-        }catch(FileNotFoundException e){
+            printHighestandLowestStudentMarks();
+        }
+        catch(FileNotFoundException e){
             System.out.println("The file cannot be found");
             e.printStackTrace();
         } 
     }
-    
+
     public void printMarksWithThreshold(){
         System.out.println("Please provide the threshold for maximum marks");
         //setting user input to class variable unitName
         Double threshold = Double.valueOf((new Scanner(System.in).nextLine()));
         for(String std : map.keySet()){
-                Double total=Double.valueOf(map.get(std).get(4));
-                if(total<threshold){
-                    System.out.println(std + ":" + total);
-                }
-                
+            Double total=Double.valueOf(map.get(std).get(4));
+            if(total<threshold){
+                System.out.println(std + ":" + total);
             }
+
+        }
     }
     
-    public void minMaxMarks(){
-    
+    public void printHighestandLowestStudentMarks(){
+        //List<String> stdName = new ArrayList<String>();
+        //stdName.addAll(map.keySet());
+        System.out.println(stdTotalMarks[3]);
+        //stdTotalMarks=stdTotalMarks.stream().sorted().collect(Collectors.toList());
+        Arrays.sort(stdTotalMarks);
+        System.out.println(stdTotalMarks[3]);
+        for(int i=0;i<10;i++){
+            System.out.println("The 10 highest marks of students are: "+students[i]+" is "+stdTotalMarks[i]);
+        }
+        //int lastBMI=peoplesBMI.size()-2;
+        //for(int i=lastBMI;i<lastBMI+2;i++){
+            //System.out.println("The BMI of "+names.get(i)+" is "+peoplesBMI.get(i));
+        //}
     }
 
     /**
