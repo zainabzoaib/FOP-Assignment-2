@@ -6,6 +6,10 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.Comparator;
+import java.util.LinkedHashMap;
 
 /**
  * Write a description of class main here.
@@ -98,23 +102,46 @@ public class Main
         }
         inputScanner.close();
     }
+     public Map<String, Double> sortHashMapByOrder(Map<String, Double> mapStdTotal, Boolean order) {
+        List<Map.Entry<String, Double>> sortingList = new LinkedList<Map.Entry<String, Double>>(mapStdTotal.entrySet());
+        // Sorting the list based on values
+        Collections.sort(sortingList, new Comparator<Map.Entry<String, Double>>() {
+            public int compare(Map.Entry<String, Double> o1,
+                    Map.Entry<String, Double> o2) {
+                if (order) {
+                    return o1.getValue().compareTo(o2.getValue());
+                } else {
+                    return o2.getValue().compareTo(o1.getValue());
+                }
+            }
+        });
+        Map<String, Double> sortedMap = new LinkedHashMap<String, Double>();
+        for (Map.Entry<String, Double> entry : sortingList) {
+            sortedMap.put(entry.getKey(), entry.getValue());
+        }
 
-
-    //public void printHighestandLowestStudentMarks(){
-        //List<String> stdName = new ArrayList<String>();
-        //stdName.addAll(map.keySet());
-        //System.out.println(stdTotalMarks[3]);
-        //stdTotalMarks=stdTotalMarks.stream().sorted().collect(Collectors.toList());
-        //Arrays.sort(stdTotalMarks);
-        //System.out.println(stdTotalMarks[3]);
-        //for(int i=0;i<10;i++){
-            //System.out.println("The 10 highest marks of students are: "+students.get(i)+" is "+stdTotalMarks[i)z);
-        //}
-        //int lastBMI=peoplesBMI.size()-2;
-        //for(int i=lastBMI;i<lastBMI+2;i++){
-            //System.out.println("The BMI of "+names.get(i)+" is "+peoplesBMI.get(i));
-        //}
-    //}
+        return sortedMap;
+    }
+    public void printTopHighestMarks() {
+        Map<String, Double> sortedStdMap = sortHashMapByOrder(mapStdTotalMarks, false);
+        int limit = 1;
+        for (String key : sortedStdMap.keySet()) {
+            if (limit <= 10) {
+                System.out.println(key + ":" + sortedStdMap.get(key));
+            }
+            limit++;
+        }
+    }
+    public void printTopLowestMarks() {
+        Map<String, Double> sortedStdMap = sortHashMapByOrder(mapStdTotalMarks, true);
+        int limit = 1;
+        for (String key : sortedStdMap.keySet()) {
+            if (limit <= 10) {
+                System.out.println(key + ":" + sortedStdMap.get(key));
+            }
+            limit++;
+        }
+    }
 
     /**
      * An example of a method - replace this comment with your own
@@ -127,6 +154,8 @@ public class Main
         myObj.readCSV();
         myObj.printStudentDetailsWithTotalMarks();
         myObj.printMarksWithThreshold();
+        myObj.printTopHighestMarks();
+        myObj.printTopLowestMarks();
 
     }
 }
