@@ -85,18 +85,20 @@ public class Main
         }
     }
         
-    //public void printMarksWithThreshold(){
-        //System.out.println("Please provide the threshold for maximum marks");
-       
-        //Double threshold = Double.valueOf((new Scanner(System.in).nextLine()));
-        //for(String std : map.keySet()){
-            //Double total=Double.valueOf(map.get(std).get(4));
-            //if(total<threshold){
-                //System.out.println(std + ":" + total);
-            //}
+    public void printMarksWithThreshold(){
+        System.out.println("Please provide the threshold for maximum marks");
+        Scanner inputScanner = new Scanner(System.in);
+        Double threshold = Double.valueOf(inputScanner.nextLine());
+        for (String std : mapStdDetails.keySet()) {
+            Double total = Double.valueOf(mapStdDetails.get(std).get(4));
+            if (total < threshold) {
+                // System.out.println(std + ": " + total);
+                System.out.printf("%s: %-10s \n", std, total);
+            }
+        }
+        inputScanner.close();
+    }
 
-        //}
-    //}
 
     //public void printHighestandLowestStudentMarks(){
         //List<String> stdName = new ArrayList<String>();
@@ -124,6 +126,7 @@ public class Main
         Main myObj= new Main();
         myObj.readCSV();
         myObj.printStudentDetailsWithTotalMarks();
+        myObj.printMarksWithThreshold();
 
     }
 }
