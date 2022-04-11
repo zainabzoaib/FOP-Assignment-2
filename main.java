@@ -166,7 +166,7 @@ public class Main {
         for (String std : mapStdDetails.keySet()) {
             // initialise list of string and set value of hash map by key
             List<String> total = mapStdDetails.get(std);
-            // print student name, student id and total marks
+            // print student name, student id, assignment marks and total marks
             System.out.println("(" + total.get(0) + ") " + std + ": " +total.get(1)+ ", " +total.get(2)+ ", " +total.get(3)+" = "+total.get(4));
         }
         // print seperator line for beautification
@@ -197,7 +197,7 @@ public class Main {
             Double total = Double.valueOf(mapStdDetails.get(std).get(4));
             // check if total is less than provided threshold
             if (total < threshold) {
-                // print student name and total marks of student
+                // print student ID, student name and total marks of student
                 System.out.println("(" + stdDetails.get(0) + ") " + std + ": " + total);
             }
         }
@@ -269,7 +269,7 @@ public class Main {
             // check if limit is less than 10 as we need only top 10 records
             if (limit <= 10) {
                 // print student name and total marks
-                System.out.println(key + ":" + sortedStdMap.get(key));
+                System.out.println(key + ": " + sortedStdMap.get(key));
             }
             // increment limit
             limit++;
@@ -301,7 +301,7 @@ public class Main {
             // check if limit is less than 10 as we need only top 10 records
             if (limit <= 10) {
                 // print student name and total marks
-                System.out.println(key + ":" + sortedStdMap.get(key));
+                System.out.println(key + ": " + sortedStdMap.get(key));
             }
             // increment limit
             limit++;
