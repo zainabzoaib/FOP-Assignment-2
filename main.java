@@ -167,7 +167,7 @@ public class Main {
             // initialise list of string and set value of hash map by key
             List<String> total = mapStdDetails.get(std);
             // print student name, student id and total marks
-            System.out.println("(" + total.get(0) + ")" + std + ":" + total.get(4));
+            System.out.println("(" + total.get(0) + ") " + std + ": " +total.get(1)+ ", " +total.get(2)+ ", " +total.get(3)+" = "+total.get(4));
         }
         // print seperator line for beautification
         System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
@@ -198,7 +198,7 @@ public class Main {
             // check if total is less than provided threshold
             if (total < threshold) {
                 // print student name and total marks of student
-                System.out.println("(" + stdDetails.get(0) + ")" + std + ": " + total);
+                System.out.println("(" + stdDetails.get(0) + ") " + std + ": " + total);
             }
         }
         // close scanner
