@@ -192,12 +192,14 @@ public class Main {
         Double threshold = Double.valueOf(inputScanner.nextLine());
         // loop for each key in hash map
         for (String std : mapStdDetails.keySet()) {
+            // initialise list of string and get student details from hash map
+            List<String> stdDetails = mapStdDetails.get(std);
             // initialise double total and set value of hash map of index 4
             Double total = Double.valueOf(mapStdDetails.get(std).get(4));
             // check if total is less than provided threshold
             if (total < threshold) {
                 // print student name and total marks of student
-                System.out.println(std + ": " + total);
+                System.out.println("(" + stdDetails.get(0) + ")" + std + ": " + total);
             }
         }
         // close scanner
