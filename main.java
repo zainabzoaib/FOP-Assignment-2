@@ -183,7 +183,7 @@ public class Main {
      */
     public void printMarksWithThreshold() {
         // print imstructions to get input from user
-        System.out.println("Please provide the threshold for maximum marks:");
+        System.out.println("Please enter your threshold");
         // print seperator line for beautification
         System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
         // getting user input
@@ -321,17 +321,17 @@ public class Main {
      */
     public void initMenu() {
         // print instructions for user to input value
-        System.out.println("Choose from these choices to perfom action");
+        System.out.println("Choose from the following to perfom action");
         // print seperator line for beautification
         System.out.println("*********************************************\n");
         // print menu option to execution operation
-        System.out.println("1 - Print Student Details with Total Marks");
+        System.out.println("1 - Select to see Student Details with Total Marks");
         // print menu option to execution operation
-        System.out.println("2 - Print marks by maximum threshold");
+        System.out.println("2 - Select to see list of students with the total marks less than a certain threshold.");
         // print menu option to execution operation
-        System.out.println("3 - Print top 10 Higher Marks with Student name");
+        System.out.println("3 - Select to see top 10 Highest Marks scoring students");
         // print menu option to execution operation
-        System.out.println("4 - Print top 10 Lowest Marks with Student name");
+        System.out.println("4 - Select to see top 10 Lowest Marks scoring students");
         // print menu option to execution operation
         System.out.println("5 - Exit Application");
         try {
