@@ -60,7 +60,6 @@ public class Main {
      */
 
     public void readCSV() {
-        System.out.println("Please wait while reading provided CSV file....");
         // initialisation of lineNumber to 0
         int lineNumber = 0;
         try {
@@ -257,7 +256,7 @@ public class Main {
      */
     public void printTopHighestMarks() {
         // print instructions
-        System.out.println("Total 10 Highest Marks acheiving Students are:");
+        System.out.println("Top 10 Highest Marks acheiving Students are:");
         // print seperator line for beautification
         System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
         // initialise hash map and call sortHashMapByOrder with arguments as hash map of
@@ -289,7 +288,7 @@ public class Main {
      */
     public void printTopLowestMarks() {
         // print instructions
-        System.out.println("Total 10 Lowest Marks acheiving Students are:");
+        System.out.println("Top 10 Lowest Marks acheiving Students are:");
         // print seperator line for beautification
         System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
         // initialise hash map and call sortHashMapByOrder with arguments as hash map of
@@ -333,7 +332,7 @@ public class Main {
         // print menu option to execution operation
         System.out.println("4 - Select to see top 10 Lowest Marks scoring students");
         // print menu option to execution operation
-        System.out.println("5 - Exit Application");
+        System.out.println("5 - Select to Exit Application");
         try {
             // print instruction to get input
             System.out.println("Enter your desired number:");
