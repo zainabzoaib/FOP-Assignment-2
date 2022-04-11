@@ -107,11 +107,11 @@ public class Main {
     private void printUnitName(String unitName) {
         // print welcome text
         System.out.println("Welcome to Program!\n");
-        // print seperator line for beautification
+        // print separator line for beautification
         System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
         // print unit name from the parameter
         System.out.println(unitName);
-        // print seperator line for beautification
+        // print separator line for beautification
         System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*\n");
     }
 
@@ -169,7 +169,7 @@ public class Main {
             // print student name, student id, assignment marks and total marks
             System.out.println("(" + total.get(0) + ") " + std + ": " +total.get(1)+ ", " +total.get(2)+ ", " +total.get(3)+" = "+total.get(4));
         }
-        // print seperator line for beautification
+        // print separator line for beautification
         System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
         // calling initMenu to reinitialise menu after execution complete
         initMenu();
@@ -183,7 +183,7 @@ public class Main {
     public void printMarksWithThreshold() {
         // print imstructions to get input from user
         System.out.println("Please enter your threshold");
-        // print seperator line for beautification
+        // print separator line for beautification
         System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
         // getting user input
         Scanner inputScanner = new Scanner(System.in);
@@ -203,7 +203,7 @@ public class Main {
         }
         // close scanner
         inputScanner.close();
-        // print seperator line for beautification
+        // print separator line for beautification
         System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
         // calling initMenu to reinitialise menu after execution complete
         initMenu();
@@ -256,8 +256,8 @@ public class Main {
      */
     public void printTopHighestMarks() {
         // print instructions
-        System.out.println("Top 10 Highest Marks acheiving Students are:");
-        // print seperator line for beautification
+        System.out.println("Top 10 Highest Marks achieving Students are:");
+        // print separator line for beautification
         System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
         // initialise hash map and call sortHashMapByOrder with arguments as hash map of
         // student with total marks and order as false
@@ -274,7 +274,7 @@ public class Main {
             // increment limit
             limit++;
         }
-        // print seperator line for beautification
+        // print separator line for beautification
         System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
         // calling initMenu to reinitialise menu after execution complete
         initMenu();
@@ -288,8 +288,8 @@ public class Main {
      */
     public void printTopLowestMarks() {
         // print instructions
-        System.out.println("Top 10 Lowest Marks acheiving Students are:");
-        // print seperator line for beautification
+        System.out.println("Top 10 Lowest Marks achieving Students are:");
+        // print separator line for beautification
         System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
         // initialise hash map and call sortHashMapByOrder with arguments as hash map of
         // student with total marks and order as true
@@ -306,7 +306,7 @@ public class Main {
             // increment limit
             limit++;
         }
-        // print seperator line for beautification
+        // print separator line for beautification
         System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
         // calling initMenu to reinitialise menu after execution complete
         initMenu();
@@ -320,8 +320,8 @@ public class Main {
      */
     public void initMenu() {
         // print instructions for user to input value
-        System.out.println("Choose from the following to perfom action");
-        // print seperator line for beautification
+        System.out.println("Choose from the following to perform action");
+        // print separator line for beautification
         System.out.println("*********************************************\n");
         // print menu option to execution operation
         System.out.println("1 - Select to see Student Details with Total Marks");
@@ -340,7 +340,7 @@ public class Main {
             Scanner menuScanner = new Scanner(System.in);
             // initialise choice and set scanner value
             Integer choice = menuScanner.nextInt();
-            // swith case to check and execute required operation
+            // switch case to check and execute required operation
             switch (choice) {
                     // if value is 1
                 case 1:
@@ -376,7 +376,7 @@ public class Main {
             menuScanner.close();
         } catch (Exception ex) {
             // print error message
-            System.out.println("An error occured");
+            System.out.println("An error occurred");
             // print stack trace
             ex.printStackTrace();
         }
