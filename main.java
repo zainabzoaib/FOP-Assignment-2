@@ -214,10 +214,8 @@ public class Main {
      * Separate function to sort Hash map preserving key and values
      *
      * @param mapStdTotal hash map of string key and double value
-     * @param order       boolean order for sorting order. true = ascending and
-     *                    false = descending
-     * @return sortedMap sorted map filled with sorted linked list by collection
-     *         sort
+     * @param order boolean order for sorting order. true = ascending and false = descending
+     * @return sortedMap sorted map filled with sorted linked list by collection sort
      * @see Map
      */
     public Map<String, Double> sortHashMapByOrder(Map<String, Double> mapStdTotal, Boolean order) {
@@ -402,7 +400,7 @@ public class Main {
     /**
      * Application start function
      * 
-     * @return initiate class and run
+     * @return initiate and run class Main
      *
      */
 
